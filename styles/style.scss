@@ -1,0 +1,87 @@
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
+$grid-breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px
+);
+
+body {
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+// Font
+.fw-extra {
+    font-weight: 800 !important;
+}
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+
+// navbar 
+.navbar {
+    z-index: 999;
+}
+
+// Nav link
+.nav-link {
+    &.active{
+        color: #6A984D !important;
+        @media screen and (min-width: map.get($grid-breakpoints, "md")) {
+            &::after{
+                content: '';
+                bottom:0;
+                width: 40%;
+                height: 1px;
+                background:#6A984D;
+                border: #6A984D solid;
+                border-radius: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+            }
+        }
+    }
+}
+
+// Hero section
+.hero-section {
+    height: 100vh;
+
+    .hero-overlay {
+        z-index: 1;
+        background-color: rgba(17, 153, 55, 0.7);
+    }
+
+    .landing-image {
+        z-index: 0;
+    }
+
+    .landing-text {
+        z-index: 2;
+    }
+}
+
+.image-container {
+
+    width: 100%;
+  
+    > div {
+      position: unset !important;
+    }
+  
+    .image {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+    }
+  }
