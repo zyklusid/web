@@ -32,9 +32,29 @@ body {
 }
 
 // Nav link
+.nav-glass {
+    &.active{
+        color: #ffff !important;
+        @media screen and (min-width: map.get($grid-breakpoints, "md")) {
+            &::after{
+                content: '';
+                bottom:0;
+                width: 40%;
+                height: 1px;
+                background:#ffff !important;
+                border: #ffff solid !important;
+                border-radius: 30px;
+                margin-left: auto;
+                margin-right: auto;
+                display:block;
+            }
+        }
+    }
+}
+
 .nav-link {
     &.active{
-        color: #6A984D !important;
+        color: #6A984D;
         @media screen and (min-width: map.get($grid-breakpoints, "md")) {
             &::after{
                 content: '';

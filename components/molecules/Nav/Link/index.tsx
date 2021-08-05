@@ -9,7 +9,7 @@ type Props = {
 
 export default function NavLink({ href, className, active, children }: Props) {
     return (
-        <InternalLink className={`${className} nav-link text-gray-700 pb-0 ${active ? 'active font-bold' : 'font-medium'}`} href={href}>
+        <InternalLink className={`${className} nav-link pb-0 ${active ? 'active font-bold' : 'font-medium'}`} href={href}>
             {children}
         </InternalLink>
     )

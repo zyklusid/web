@@ -8,7 +8,7 @@ import MainLayout from '../components/templates/Main'
 
 export default function Home() {
   return (
-    <MainLayout>
+    <MainLayout navGlass={true}>
       <Hero />
       <div className="container lg:px-20 md:px-5 mx-auto px-2">
         {/* About Section */}
