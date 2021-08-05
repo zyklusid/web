@@ -11,7 +11,7 @@ export default function MainLayout({ children, navGlass }: Props) {
         <>
             <div>
                 <Navbar transparent={navGlass} />
-                <div>
+                <div className="min-h-screen">
                     {children}
                 </div>
                 <MainFooter />

@@ -7,6 +7,29 @@ type Props = {
     transparent?: boolean
 }
 
+const navigation = [
+    {
+        href: '/',
+        text: 'Beranda'
+    },
+    {
+        href: '/partner',
+        text: 'Mitra'
+    },
+    {
+        href: '/about',
+        text: 'Tentang'
+    },
+    {
+        href: '/blog',
+        text: 'Blog'
+    },
+    {
+        href: '/help',
+        text: 'Bantuan'
+    }
+]
+
 export default function Navbar({ transparent }: Props) {
     const [scroll, setScroll] = useState(0)
     const [navClass, setNavClass] = useState('bg-white shadow')
@@ -43,21 +66,11 @@ export default function Navbar({ transparent }: Props) {
             </div>
             <div className="hidden sm:block" id="navbarNavAltMarkup">
                 <div className="flex space-x-4">
-                    <NavLink className={navLinkClass} href="/" active={true}>
-                        Beranda
-                    </NavLink>
-                    <NavLink className={navLinkClass} href="/mitra">
-                        Mitra
-                    </NavLink>
-                    <NavLink className={navLinkClass} href="/tentang">
-                        Tentang
-                    </NavLink>
-                    <NavLink className={navLinkClass} href="/blog">
-                        Blog
-                    </NavLink>
-                    <NavLink className={navLinkClass} href="/bantuan">
-                        Bantuan
-                    </NavLink>
+                    {navigation.map((navItem, idx) => (
+                        <NavLink className={navLinkClass} href={navItem.href} key={idx}>
+                            {navItem.text}
+                        </NavLink>
+                    ))}
                 </div>
             </div>
         </nav>
