@@ -1,6 +1,7 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import Head from 'next/head'
 import InternalLink from '../components/atoms/InternalLink'
 
 import Hero from '../components/organisms/Hero'
@@ -9,6 +10,9 @@ import MainLayout from '../components/templates/Main'
 export default function Home() {
   return (
     <MainLayout navGlass={true}>
+      <Head>
+        <title>Zyklus Indonesia | Aplikasi Pengelola Sampah digital</title>
+      </Head>
       <Hero />
       <div className="container lg:px-20 md:px-5 mx-auto px-2">
         {/* About Section */}
