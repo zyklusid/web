@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import InternalLink from '../../atoms/InternalLink';
 // import ZyklusLogo from '../../../public/zyklus-logo.png';
@@ -31,11 +32,19 @@ const navigation = [
     }
 ]
 
+function checkPath(pathname: string, href: string): boolean {
+    const new_pathname = pathname.slice(1)
+    const new_href = href.slice(1)
+
+    return new_pathname === new_href
+}
+
 export default function Navbar({ transparent }: Props) {
     const [scroll, setScroll] = useState(0)
     const [navClass, setNavClass] = useState('bg-white shadow')
     const [navLinkClass, setNavLinkClass] = useState('text-gray-700')
     const [zyklusLogo, setZyklusLogo] = useState('banner-warna.png')
+    const router = useRouter()
 
     useEffect(() => {
         document.addEventListener("scroll", () => {
@@ -68,7 +77,7 @@ export default function Navbar({ transparent }: Props) {
             <div className="hidden sm:block" id="navbarNavAltMarkup">
                 <div className="flex space-x-4">
                     {navigation.map((navItem, idx) => (
-                        <NavLink className={navLinkClass} href={navItem.href} key={idx}>
+                        <NavLink className={navLinkClass} href={navItem.href} key={idx} active={checkPath(router.pathname, navItem.href)}>
                             {navItem.text}
                         </NavLink>
                     ))}

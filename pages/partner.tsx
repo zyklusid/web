@@ -1,10 +1,12 @@
 import Image from 'next/image'
+import Container from '../components/atoms/Container';
 import MainLayout from "../components/templates/Main";
 
 export default function Partner() {
     return (
         <MainLayout>
-            <div className="pt-36 container lg:px-20 px-5">
+            <Container className="pt-36">
+
                 <h1 className="md:text-4xl text-3xl font-bold">Mitra Kami</h1>
                 <p className="text-lg">Seperti tagline kami #KolaborasiLestari, kami menjalin beberapa kerja sama dengan beberapa mitra untuk menjalankan visi dan misi kami.</p>
 
@@ -44,7 +46,7 @@ export default function Partner() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </MainLayout>
     )
 }

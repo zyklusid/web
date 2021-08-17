@@ -6,17 +6,26 @@ import InternalLink from '../components/atoms/InternalLink'
 
 import Hero from '../components/organisms/Hero'
 import MainLayout from '../components/templates/Main'
+import Container from '../components/atoms/Container'
+import OpenGraph from '../components/atoms/OpenGraph'
 
 export default function Home() {
   return (
     <MainLayout navGlass={true}>
       <Head>
         <title>Zyklus Indonesia | Aplikasi Pengelola Sampah digital</title>
+        <OpenGraph
+          title="Zyklus Indonesia | Aplikasi Pengelola Sampah digital"
+          description="Startup pengelola sampah berbasis ramah lingkungan, pemberdayaan masyarakat, dan kearifan lokal"
+          image='/banner-warna.png'
+          siteName="Zyklus Indonesia"
+          url="/"
+        />
       </Head>
       <Hero />
-      <div className="container lg:px-20 md:px-5 mx-auto px-2">
+      <Container>
         {/* About Section */}
-        <div className="py-16 mb-5" id="about">
+        <div className="py-16" id="about">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-4 flex items-center">
             <div className="lg:w-3/4 mx-auto">
               <div className="image-container px-md-5 w-md-75">
@@ -24,10 +33,10 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full">
-              <h2 className="font-bold lg:text-4xl text-3xl mb-4">#KolaborasiLestari</h2>
+              <h2 className="font-bold lg:text-4xl text-3xl mb-4">Tentang Kami</h2>
               <p className="text-xl">Berkolaborasi dengan berbagai pihak untuk mengelola sampah secara ramah lingkungan, memberdayakan masyarakat, dan mewujudkan kehidupan yang lestari Mewujudkan Kelestarian Lingkungan Dengan Menghubungkan Seluruh Masyarakat Dalam Satu Platform</p>
               <div className="py-4">
-                <InternalLink href="/" className="text-xl text-green-600 font-bold">
+                <InternalLink href="/about" className="text-xl text-green-600 font-bold">
                   <span className="mr-4">Selengkapnya Tentang Kami</span>
                   <FontAwesomeIcon icon={faArrowRight} />
                 </InternalLink>
@@ -38,54 +47,70 @@ export default function Home() {
         {/* End of About Section */}
 
         {/* Service Section */}
-        <div className="py-10" id="layanan">
-          <h2 className="font-bold lg:text-4xl text-3xl mb-3">Layanan</h2>
-          <p className="text-xl">Layanan berbasi kolaborasi untuk mendaur ulang sampah demi terciptanya lingkungan yang letstari. Lihat semua layanan kami.</p>
-          <div className="py-2 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4 py-4" id="layanan_grid">
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6" id="zi_waste">
-              <div className="w-2/6 mx-auto mb-4">
-                <div className="image-container">
-                  <Image src="/icon/box-small.png" layout="fill" className="image" alt="zi_waste" />
+        <div className="md:py-20 py-10" id="layanan">
+          <div className="mb-4">
+            <h2 className="font-bold lg:text-4xl text-3xl mb-3">Layanan</h2>
+            <p className="text-xl">Layanan berbasis kolaborasi untuk mendaur ulang sampah demi terciptanya lingkungan yang letstari. Lihat semua layanan kami.</p>
+          </div>
+          <div className="py-5 grid md:grid-cols-2 grid-cols-1 lg:gap-10 gap-4">
+            <div className="py-5 px-6 shadow bg-white rounded">
+              <div className="flex space-x-4 items-center">
+                <div className="w-10">
+                  <div className="image-container">
+                    <Image src="/icon/box-small.png" layout="fill" className="image" alt="zi_pick" />
+                  </div>
                 </div>
+                <h2 className="text-2xl font-bold">Zi Pick</h2>
               </div>
-              <h5 className="text-xl font-bold mb-2">Zi Waste</h5>
-              <p className="text-xl">
+              <div className="text-lg py-5">
                 Pilah-pilih sampahmu kemudian upload ke aplikasi zyklus. Kemudian pesan layanan Pick Up untuk menjual sampah
-              </p>
-            </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6" id="zi_poin">
-              <div className="w-2/6 mx-auto mb-4">
-                <div className="image-container">
-                  <Image src="/icon/poin-small.png" layout="fill" className="image" alt="zi_poin" />
-                </div>
               </div>
-              <h5 className="text-xl font-bold mb-2">Zi Poin</h5>
-              <p className="text-xl">Dapatkan poin setiap kali kamu menjual sampah. Tukarkan poin dengan uang dan transfer ke rekening tabungan kamu.</p>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6" id="zi_market">
-              <div className="w-2/6 mx-auto mb-4">
-                <div className="image-container">
-                  <Image src="/icon/recycle-small.png" layout="fill" className="image" alt="zi_market" />
+            <div className="py-5 px-6 shadow bg-white rounded">
+              <div className="flex space-x-4 items-center">
+                <div className="w-10">
+                  <div className="image-container">
+                    <Image src="/icon/bag-small.png" layout="fill" className="image" alt="zi_drop" />
+                  </div>
                 </div>
+                <h2 className="text-2xl font-bold">Zi Drop</h2>
               </div>
-              <h5 className="text-xl font-bold mb-2">Zi Market</h5>
-              <p className="text-xl">Beli atau jual produk daur ulang kamu di Zi Market. Bergabunglah menjadi mitra Zyklus untuk menjual produkmu.</p>
+              <div className="text-lg py-5">
+                Kamu bisa mengantarkan sampahmu langsung ke warehouse zyklus untuk ditimbang dan mendapatkan hasil penjualan.
+              </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6" id="zi_blog">
-              <div className="w-2/6 mx-auto mb-4">
-                <div className="image-container">
-                  <Image src="/icon/blog-small.png" layout="fill" className="image" alt="zi_blog" />
+            <div className="py-5 px-6 shadow bg-white rounded">
+              <div className="flex space-x-4 items-center">
+                <div className="w-10">
+                  <div className="image-container">
+                    <Image src="/icon/recycle-small.png" layout="fill" className="image" alt="zi_market" />
+                  </div>
                 </div>
+                <h2 className="text-2xl font-bold">Zi Mart</h2>
               </div>
-              <h5 className="text-xl font-bold mb-2">Zi Blog</h5>
-              <p className="text-xl">Dapatkan berita, tips & trick, diskon di Zi Blog melalui berbagai chanel kami.</p>
+              <div className="text-lg py-5">
+                Beli atau jual produk daur ulang kamu di Zi Market. Bergabunglah menjadi mitra Zyklus untuk menjual produkmu.
+              </div>
+            </div>
+            <div className="py-5 px-6 shadow bg-white rounded">
+              <div className="flex space-x-4 items-center">
+                <div className="w-10">
+                  <div className="image-container">
+                    <Image src="/icon/blog-small.png" layout="fill" className="image" alt="zi_blog" />
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold">Zinfo</h2>
+              </div>
+              <div className="text-lg py-5">
+                Dapatkan berita, tips & trick, diskon di Zi Blog melalui berbagai channel kami.
+              </div>
             </div>
           </div>
         </div>
         {/* End of Service Section */}
 
         {/* Waste Categories Section */}
-        <div className="py-10" id="kategori_sampah">
+        <div className="md:py-20 py-10" id="kategori_sampah">
           <h2 className="font-bold lg:text-4xl text-3xl mb-3">Jenis Sampah</h2>
           <p className="text-xl">Lihat dan pelajari beberapa jenis sampah yang kami daur ulang.</p>
           {/* Grid */}
@@ -173,9 +198,7 @@ export default function Home() {
           </div>
           {/* End of Grid */}
         </div>
-
-
-      </div>
+      </Container>
     </MainLayout>
   )
 }

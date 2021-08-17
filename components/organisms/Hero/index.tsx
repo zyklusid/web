@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Container from "../../atoms/Container";
 
 export default function Hero() {
     return (
@@ -7,7 +8,7 @@ export default function Hero() {
                 <h1 className="display-4 ">Zyklus Indonesia</h1>
             </div> */}
             <div className="hero-overlay relative h-full flex items-center">
-                <div className="container md:px-20 px-5 pt-10">
+                <Container className="pt-10">
                     <h1 className="text-white lg:text-6xl text-5xl font-bold">Zyklus Indonesia</h1>
                     <div className="lg:grid lg:grid-cols-2">
                         <div>
@@ -16,7 +17,7 @@ export default function Hero() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
             <Image
                 className="landing-image h-100"
