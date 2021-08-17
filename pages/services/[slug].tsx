@@ -1,3 +1,5 @@
 export default function ServiceDetail() {
-    return
+    return (
+        <h1>Halo</h1>
+    )
 }
