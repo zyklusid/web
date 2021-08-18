@@ -4,6 +4,6 @@ module.exports = {
   reactStrictMode: true,
   sassOptions: [path.join(__dirname, 'styles')],
   images: {
-    domains: ['picsum.photos'],
+    domains: ['picsum.photos', 'static.ghost.org', 'localhost'],
   },
 }

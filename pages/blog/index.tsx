@@ -1,49 +1,98 @@
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Image from "next/image";
+import { useEffect } from "react";
+import Container from "../../components/atoms/Container";
 import InternalLink from "../../components/atoms/InternalLink";
 import MainLayout from "../../components/templates/Main";
+import { blogAPIKey, blogUrl } from "../../utils/api";
+import { DateIndo } from "../../utils/date";
 
-export default function Blog() {
+export const getServerSideProps: GetServerSideProps = async () => {
+    let data = null
+
+    try {
+        const res = await axios.get(blogUrl + 'content/posts1/', {
+            params: {
+                key: blogAPIKey,
+                include: ['authors', 'tags'],
+            }
+        })
+
+        if (res) {
+            data = res.data
+        }
+    } catch (e) {
+        console.log(e)
+    }
+
+    return {
+        props: {
+            data,
+        }
+    }
+}
+
+export default function Blog({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+    const blogCard = data && data.posts.map((post: any) => {
+        return (
+            <InternalLink href={`/blog/${post.slug}`} key={post.id}>
+                <div className="bg-white shadow-lg rounded h-full relative">
+                    <div className="image-container">
+                        <Image src={post.feature_image} layout="fill" className="image rounded" alt="gambar" />
+                    </div>
+                    <div className="p-4 mb-20">
+                        <div className="w-full flex gap-2 justify-end mb-3">
+                            {post.tags.map((tag: any) => (
+                                <span className="bg-green-200 text-xs text-green-700 px-2 rounded-full">{tag.name}</span>
+                            ))}
+                        </div>
+                        <div className="mb-3">
+                            <h1 className="text-lg font-bold">{post.title}</h1>
+                        </div>
+                        <p className="text-base">
+                            {post.custom_excerpt}
+                        </p>
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 px-4 mb-2">
+                        <div className="flex gap-4 items-center">
+                            {post.authors[0].profile_image ? (
+                                <div className="rounded-full h-8 w-8">
+                                    <div className="image-container">
+                                        <Image src={post.authors[0].profile_image} layout="fill" className="image rounded" alt="gambar" />
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="rounded-full h-8 w-8 bg-gray-400 flex items-center align-center">
+                                    <FontAwesomeIcon icon={faUser} className="text-center mx-auto text-gray-500" />
+                                </div>
+                            )}
+                            <div>
+                                <p className="text-sm font-bold">{post.authors[0].name}</p>
+                                <p className="text-sm">{DateIndo(new Date(post.published_at))}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </InternalLink>
+        )
+    })
+
     return (
         <MainLayout >
-            <div className="pt-28 container lg:px-20 md:px-5 px-2">
+            <Container className="md:py-32 py-28">
                 <h1 className="text-5xl font-bold">Ada apa di Zyklus?</h1>
                 <p className="text-base">Berita seru, cerita mitra, dan promo terbaru. Baca Semua Artikel tentang Zyklus disini. </p>
 
                 <div className="py-4">
-                    <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 grid-cols-1">
-                        <div className="bg-white shadow-lg rounded relative">
-                            <div className="image-container">
-                                <Image src="https://picsum.photos/500/300" layout="fill" className="image rounded" alt="gambar" />
-                            </div>
-                            <div className="p-4 mb-5">
-                                <h1 className="text-lg font-bold">Sebuah Judul Artikel Yang Bisa Kalian Baca</h1>
-                                <p className="text-base">
-                                    Sama seperti negara-negara lain, Indonesia menghadapi ancaman besar dari meluapnya limbah infeksius – beginilah peraturan daerah dan masyarakat menangani limbah situasi pandemi COVID-19.
-                                </p>
-                            </div>
-                            <div className="absolute inset-x-0 bottom-0 px-4 mb-2">
-                                <InternalLink href="/blog/blog-1" className="text-green-500 hover:text-green-600 font-bold">Baca Selengkapnya</InternalLink>
-                            </div>
-                        </div>
-                        <div className="bg-white shadow-lg rounded relative">
-                            <div className="image-container">
-                                <Image src="https://picsum.photos/500/300" layout="fill" className="image rounded" alt="gambar" />
-                            </div>
-                            <div className="p-4">
-                                <h1 className="text-lg font-bold">Sebuah Judul Artikel Yang Bisa Kalian Baca</h1>
-                                {/* <p className="text-base">
-                                        Sama seperti negara-negara lain, Indonesia menghadapi ancaman besar dari meluapnya limbah infeksius – beginilah peraturan daerah dan masyarakat menangani limbah situasi pandemi COVID-19.
-                                    </p> */}
-                            </div>
-                            <div className="absolute inset-x-0 bottom-0 px-4 mb-2">
-                                <a href="" className="text-green-500 hover:text-green-600 font-bold">Baca Selengkapnya</a>
-                            </div>
-                        </div>
+                    <div className="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1">
+                        {blogCard || (<h1 className="text-2xl font-medium">Tidak ada artikel</h1>)}
                     </div>
-                </div>\
-
-
-            </div>
+                </div>
+            </Container>
         </MainLayout>
     )
 }
