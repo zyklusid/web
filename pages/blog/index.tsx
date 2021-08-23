@@ -45,8 +45,8 @@ export default function Blog({ data }: InferGetServerSidePropsType<typeof getSer
                     </div>
                     <div className="p-4 mb-20">
                         <div className="w-full flex gap-2 justify-end mb-3">
-                            {post.tags.map((tag: any) => (
-                                <span className="bg-green-200 text-xs text-green-700 px-2 rounded-full">{tag.name}</span>
+                            {post.tags.map((tag: any, idx: number) => (
+                                <span className="bg-green-200 text-xs text-green-700 px-2 rounded-full" key={idx}>{tag.name}</span>
                             ))}
                         </div>
                         <div className="mb-3">

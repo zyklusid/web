@@ -43,7 +43,7 @@ export default function Navbar({ transparent }: Props) {
     const [scroll, setScroll] = useState(0)
     const [navClass, setNavClass] = useState('bg-white shadow')
     const [navLinkClass, setNavLinkClass] = useState('text-gray-700')
-    const [zyklusLogo, setZyklusLogo] = useState('banner-warna.png')
+    const [zyklusLogo, setZyklusLogo] = useState('logo-175.png')
     const router = useRouter()
 
     useEffect(() => {
@@ -58,11 +58,11 @@ export default function Navbar({ transparent }: Props) {
             if (scroll < 100) {
                 setNavClass('')
                 setNavLinkClass('text-white nav-glass')
-                setZyklusLogo('banner-putih.png')
+                setZyklusLogo('logo-175-putih.png')
             } else {
                 setNavClass('bg-white shadow')
                 setNavLinkClass('text-gray-700')
-                setZyklusLogo('banner-warna.png')
+                setZyklusLogo('logo-175.png')
             }
         }
     }, [transparent, scroll])
