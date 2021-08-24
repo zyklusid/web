@@ -15,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     let data = null
 
     try {
-        const res = await axios.get(blogUrl + 'content/posts1/', {
+        const res = await axios.get(blogUrl + 'content/posts/', {
             params: {
                 key: blogAPIKey,
                 include: ['authors', 'tags'],
