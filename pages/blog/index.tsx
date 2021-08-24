@@ -2,6 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import { useEffect } from "react";
 import Container from "../../components/atoms/Container";
@@ -83,6 +84,9 @@ export default function Blog({ data }: InferGetServerSidePropsType<typeof getSer
 
     return (
         <MainLayout >
+            <Head>
+                <title>Blog | Temukan artikel dan penawaran menarik dari Zyklus</title>
+            </Head>
             <Container className="md:py-32 py-28">
                 <h1 className="text-5xl font-bold">Ada apa di Zyklus?</h1>
                 <p className="text-base">Berita seru, cerita mitra, dan promo terbaru. Baca Semua Artikel tentang Zyklus disini. </p>

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Container from '../components/atoms/Container';
 import MainLayout from "../components/templates/Main";
 
 export default function About() {
@@ -22,7 +23,8 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div className="container lg:px-20 px-5">
+            <Container>
+
                 <div className="py-20 grid md:grid-cols-2 grid-cols-1 gap-4 flex items-center">
                     <div className="lg:w-3/4 mx-auto sm:hidden block">
                         <div className="image-container px-md-5 w-md-75">
@@ -120,8 +122,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-
-            </div>
+            </Container>
         </MainLayout>
     )
 }
