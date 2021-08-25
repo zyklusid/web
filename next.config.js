@@ -6,4 +6,7 @@ module.exports = {
   images: {
     domains: ['picsum.photos', 'static.ghost.org', 'localhost'],
   },
+  env: {
+    BLOG_API_KEY: process.env.BLOG_API_KEY
+  }
 }

@@ -66,7 +66,7 @@ export default function BlogPost({ data }: InferGetServerSidePropsType<typeof ge
                                         ))}
                                     </div>
                                 </div>
-                                <h1 className="md:text-4xl text-2xl font-bold mb-4">{ data.posts[0].title }</h1>
+                                <h1 className="md:text-4xl text-2xl font-bold mb-4">{data.posts[0].title}</h1>
                                 <div className="flex gap-4 items-center mb-8">
                                     {data.posts[0].authors[0].profile_image ? (
                                         <div className="rounded-full h-8 w-8">

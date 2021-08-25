@@ -4,40 +4,49 @@ import axios from "axios";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Container from "../../components/atoms/Container";
 import InternalLink from "../../components/atoms/InternalLink";
 import MainLayout from "../../components/templates/Main";
 import { blogAPIKey, blogUrl } from "../../utils/api";
 import { DateIndo } from "../../utils/date";
 
-export const getServerSideProps: GetServerSideProps = async () => {
-    let data = null
+export default function Blog() {
+    interface Data {
+        posts: []
+    }
 
-    try {
-        const res = await axios.get(blogUrl + 'content/posts/', {
+    const [data, setData] = useState<Data>()
+
+    useEffect(() => {
+        axios.get(blogUrl + 'content/posts/', {
             params: {
                 key: blogAPIKey,
                 include: ['authors', 'tags'],
             }
+        }).then(res => {
+            setData(res.data)
+        }).catch(error => {
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+            } else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request);
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message);
+            }
+            console.log(error.config);
         })
+    })
 
-        if (res) {
-            data = res.data
-        }
-    } catch (e) {
-        console.log(e)
-    }
-
-    return {
-        props: {
-            data,
-        }
-    }
-}
-
-export default function Blog({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-    const blogCard = data && data.posts.map((post: any) => {
+    const blogCard = data && data?.posts.map((post: any) => {
         return (
             <InternalLink href={`/blog/${post.slug}`} key={post.id}>
                 <div className="bg-white shadow-lg rounded h-full relative">
