@@ -113,7 +113,7 @@ export default function Home() {
           <p className="text-xl">Lihat dan pelajari beberapa jenis sampah yang kami daur ulang.</p>
           {/* Grid */}
           <div className="py-2 grid md:grid-cols-4 grid-cols-2 gap-4 py-4" id="jenis_sampah_grid">
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_kertas">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_kertas">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -123,7 +123,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kertas</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_plastik">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_plastik">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -133,7 +133,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Plastik</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_kain">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_kain">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -143,7 +143,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kain</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_besi">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_besi">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -153,7 +153,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Besi & Logam</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_beling">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_beling">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -163,7 +163,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kaca</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_alumunium">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_alumunium">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -173,7 +173,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Alumunium</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_elektronik">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_elektronik">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -183,7 +183,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Elektronik</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_lain">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_lain">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
