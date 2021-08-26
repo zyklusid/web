@@ -6,7 +6,7 @@ type Props = {
     description?: string
 }
 
-export default function OpenGraph({ title, image, siteName, description, url }: Props) {
+export default function OpenGraph({ title, image = 'https://www.zyklus.id/favicon.png', siteName = 'Zyklus Indonesia', description, url }: Props) {
     return (
         <>
             <meta property="og:title" content={title} />

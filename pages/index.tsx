@@ -17,8 +17,6 @@ export default function Home() {
         <OpenGraph
           title="Zyklus Indonesia | Aplikasi Pengelola Sampah digital"
           description="Startup pengelola sampah berbasis ramah lingkungan, pemberdayaan masyarakat, dan kearifan lokal"
-          image='/banner-warna.png'
-          siteName="Zyklus Indonesia"
           url="/"
         />
       </Head>

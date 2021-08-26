@@ -1,10 +1,20 @@
+import Head from 'next/head';
 import Image from 'next/image'
 import Container from '../components/atoms/Container';
+import OpenGraph from '../components/atoms/OpenGraph';
 import MainLayout from "../components/templates/Main";
 
 export default function Partner() {
     return (
         <MainLayout>
+            <Head>
+                <title>Mitra Kami</title>
+                <OpenGraph
+                    title='Mitra Kami'
+                    description='Seperti tagline kami #KolaborasiLestari, kami menjalin beberapa kerja sama dengan beberapa mitra untuk menjalankan visi dan misi kami.'
+                    url={`https://www.zyklus.id/about/`}
+                />
+            </Head>
             <Container className="pt-36">
 
                 <h1 className="md:text-4xl text-3xl font-bold">Mitra Kami</h1>

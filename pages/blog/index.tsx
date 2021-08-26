@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Container from "../../components/atoms/Container";
 import InternalLink from "../../components/atoms/InternalLink";
+import OpenGraph from "../../components/atoms/OpenGraph";
 import MainLayout from "../../components/templates/Main";
 import { blogAPIKey, blogUrl } from "../../utils/api";
 import { DateIndo } from "../../utils/date";
@@ -95,6 +96,11 @@ export default function Blog() {
         <MainLayout >
             <Head>
                 <title>Blog | Temukan artikel dan penawaran menarik dari Zyklus</title>
+                <OpenGraph
+                    title='Blog | Temukan artikel dan penawaran menarik dari Zyklus'
+                    description='Berita seru, cerita mitra, dan promo terbaru. Baca Semua Artikel tentang Zyklus disini.'
+                    url={`https://www.zyklus.id/blog/`}
+                />
             </Head>
             <Container className="md:py-32 py-28">
                 <h1 className="text-5xl font-bold">Ada apa di Zyklus?</h1>

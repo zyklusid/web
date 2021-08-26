@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Container from '../components/atoms/Container';
+import OpenGraph from '../components/atoms/OpenGraph';
 import MainLayout from "../components/templates/Main";
 
 export default function About() {
@@ -8,6 +9,11 @@ export default function About() {
         <MainLayout>
             <Head>
                 <title>Tentang Kami</title>
+                <OpenGraph
+                    title='Tentang Kami'
+                    description='Berkolaborasi dengan berbagai pihak untuk mengelola sampah secara ramah lingkungan, memberdayakan masyarakat, dan mewujudkan kehidupan yang lestari.'
+                    url={`https://www.zyklus.id/about/`}
+                />
             </Head>
             <div className="h-screen pt-20 flex items-center" style={{ backgroundColor: "#B7E0C3" }}>
                 <div className="container lg:px-20 px-5 mx-auto grid md:grid-cols-2 grid-cols-1 gap-4 flex items-center">
