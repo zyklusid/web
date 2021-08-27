@@ -32,7 +32,9 @@ export default function Home() {
             </div>
             <div className="w-full">
               <h2 className="font-bold lg:text-4xl text-3xl mb-4">Tentang Kami</h2>
-              <p className="text-xl">Berkolaborasi dengan berbagai pihak untuk mengelola sampah secara ramah lingkungan, memberdayakan masyarakat, dan mewujudkan kehidupan yang lestari Mewujudkan Kelestarian Lingkungan Dengan Menghubungkan Seluruh Masyarakat Dalam Satu Platform</p>
+              <p className="text-xl">
+                Startup pengelola sampah yang berkolaborasi dengan berbagai pihak untuk mewujudkan kehidupan yang lestari dengan menghubungkan seluruh masyarakat dalam satu platform
+              </p>
               <div className="py-4">
                 <InternalLink href="/about" className="text-xl text-green-600 font-bold">
                   <span className="mr-4">Selengkapnya Tentang Kami</span>
@@ -43,7 +45,20 @@ export default function Home() {
           </div>
         </div>
         {/* End of About Section */}
+      </Container>
 
+      <div className="py-20 bg-green-100">
+        <Container>
+          <div className="mb-8">
+            <h2 className="font-bold lg:text-4xl text-3xl mb-4 text-center">Profil Kami</h2>
+          </div>
+          <div className="flex justify-center lg:px-48">
+            <iframe className="w-full md:h-96 h-56" width={560} height={315} src="https://www.youtube.com/embed/JSIii542X3Y" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+          </div>
+        </Container>
+      </div>
+
+      <Container>
         {/* Service Section */}
         <div className="md:py-20 py-10" id="layanan">
           <div className="mb-4">
