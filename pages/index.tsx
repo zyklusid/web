@@ -32,7 +32,9 @@ export default function Home() {
             </div>
             <div className="w-full">
               <h2 className="font-bold lg:text-4xl text-3xl mb-4">Tentang Kami</h2>
-              <p className="text-xl">Berkolaborasi dengan berbagai pihak untuk mengelola sampah secara ramah lingkungan, memberdayakan masyarakat, dan mewujudkan kehidupan yang lestari Mewujudkan Kelestarian Lingkungan Dengan Menghubungkan Seluruh Masyarakat Dalam Satu Platform</p>
+              <p className="text-xl">
+                Startup pengelola sampah yang berkolaborasi dengan berbagai pihak untuk mewujudkan kehidupan yang lestari dengan menghubungkan seluruh masyarakat dalam satu platform
+              </p>
               <div className="py-4">
                 <InternalLink href="/about" className="text-xl text-green-600 font-bold">
                   <span className="mr-4">Selengkapnya Tentang Kami</span>
@@ -43,7 +45,20 @@ export default function Home() {
           </div>
         </div>
         {/* End of About Section */}
+      </Container>
 
+      <div className="py-20 bg-green-100">
+        <Container>
+          <div className="mb-8">
+            <h2 className="font-bold lg:text-4xl text-3xl mb-4 text-center">Profil Kami</h2>
+          </div>
+          <div className="flex justify-center lg:px-48">
+            <iframe className="w-full md:h-96 h-56" width={560} height={315} src="https://www.youtube.com/embed/JSIii542X3Y" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+          </div>
+        </Container>
+      </div>
+
+      <Container>
         {/* Service Section */}
         <div className="md:py-20 py-10" id="layanan">
           <div className="mb-4">
@@ -113,7 +128,7 @@ export default function Home() {
           <p className="text-xl">Lihat dan pelajari beberapa jenis sampah yang kami daur ulang.</p>
           {/* Grid */}
           <div className="py-2 grid md:grid-cols-4 grid-cols-2 gap-4 py-4" id="jenis_sampah_grid">
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_kertas">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_kertas">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -123,7 +138,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kertas</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_plastik">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_plastik">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -133,7 +148,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Plastik</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_kain">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_kain">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -143,7 +158,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kain</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_besi">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_besi">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -153,7 +168,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Besi & Logam</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_beling">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_beling">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -163,7 +178,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Kaca</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_alumunium">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_alumunium">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -173,7 +188,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Alumunium</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_elektronik">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_elektronik">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
@@ -183,7 +198,7 @@ export default function Home() {
                 <h5 className="text-xl font-bold mb-0">Elektronik</h5>
               </div>
             </div>
-            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center" id="sampah_lain">
+            <div className="bg-white shadow-lg px-4 text-center rounded py-6 flex items-center justify-center" id="sampah_lain">
               <div>
                 <div className="w-2/6 mx-auto mb-4">
                   <div className="image-container">
