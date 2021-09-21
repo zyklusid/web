@@ -71,7 +71,8 @@ export default function BlogPost({ data }: InferGetServerSidePropsType<typeof ge
                                     {data.posts[0].authors[0].profile_image ? (
                                         <div className="rounded-full h-8 w-8">
                                             <div className="image-container">
-                                                <Image src={data.posts[0].authors[0].profile_image} layout="fill" className="image rounded" alt="gambar" />
+                                                {'loading ' || (<Image src={data.posts[0].authors[0].profile_image} layout="fill" className="image rounded" alt="gambar" />
+                                                )}
                                             </div>
                                         </div>
                                     ) : (
