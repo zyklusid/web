@@ -50,14 +50,11 @@ export default function BlogPost({ data }: InferGetServerSidePropsType<typeof ge
                     url={`https://www.zyklus.id/blog/${slug}`}
                 />
             </Head>
-            <div className="pt-28 lg:px-20 md:px-5 px-2 mb-10">
+            <div className="pt-28 lg:px-20 px-5 mb-10">
                 {data ? (
 
-                    <div className="grid md:grid-cols-4">
-                        <div className="sm:block hidden">
-
-                        </div>
-                        <div className="col-span-2 col-end-4">
+                    <div className="grid md:grid-cols-4 grid-cols-none">
+                        <div className="col-start-2 col-span-2">
                             <div className="mb-3">
                                 <div className="mb-2">
                                     <div className="w-full flex gap-2 justify-end mb-3">
@@ -71,8 +68,7 @@ export default function BlogPost({ data }: InferGetServerSidePropsType<typeof ge
                                     {data.posts[0].authors[0].profile_image ? (
                                         <div className="rounded-full h-8 w-8">
                                             <div className="image-container">
-                                                {'loading ' || (<Image src={data.posts[0].authors[0].profile_image} layout="fill" className="image rounded" alt="gambar" />
-                                                )}
+                                                <Image src={data.posts[0].authors[0].profile_image} layout="fill" className="image rounded" alt="gambar" />
                                             </div>
                                         </div>
                                     ) : (
