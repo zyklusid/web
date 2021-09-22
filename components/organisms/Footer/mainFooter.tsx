@@ -8,7 +8,7 @@ export default function MainFooter() {
             <div className="md:px-20 px-5 py-5 flex items-center justify-between">
                 <div className="w-28">
                     <div className="image-container">
-                        <Image src="/zyklus-logo.png" alt="logo_zyklus" layout="fill" className="image" />
+                        <Image src="/logo-700-putih.png" alt="logo_zyklus" layout="fill" className="image" />
                     </div>
                 </div>
                 <div>
