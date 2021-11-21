@@ -13,7 +13,7 @@ export default function SuccessResetPassword() {
             <Head>
                 <title>Reset Password</title>
                 <OpenGraph
-                title="Reset Password"
+                title="Reset Password Sukses"
                 description="Startup pengelola sampah berbasis ramah lingkungan, pemberdayaan masyarakat, dan kearifan lokal"
                 url="/"
                 />
